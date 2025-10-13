@@ -1,2 +1,2 @@
-This is the midterm project for CSCI 441 to which we have formed the group THE ETERNAL ALCHEMISTS consisting of members Elyse Franklin, Elija Booth, Leviathan Douglas, and Stew Nowak.
+This is the midterm project for CSCI 441 to which we have formed the group THE ETERNAL ALCHEMISTS consisting of members Elyse Franklin, Elijah Booth, Leviathan Douglas, and Stew Nowak.
 UPDATE THIS AS WE GO!!
