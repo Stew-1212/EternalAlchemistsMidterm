@@ -1,0 +1,3 @@
+C:/Users/stewa/Schoolwork/ComputerGraphics/EternalAlchemistsMidterm/build/CMakeFiles/MP.dir
+C:/Users/stewa/Schoolwork/ComputerGraphics/EternalAlchemistsMidterm/build/CMakeFiles/edit_cache.dir
+C:/Users/stewa/Schoolwork/ComputerGraphics/EternalAlchemistsMidterm/build/CMakeFiles/rebuild_cache.dir
