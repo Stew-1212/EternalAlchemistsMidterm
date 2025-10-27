@@ -7,29 +7,31 @@
 
 #version 410 core
 
-// all uniform inputs
+// all uniform inputs from vertex shader
+in vec3 vertexColor;
+in vec2 vTexCoord;
+in float texEnabled;
+in vec3 vEmissiveColor;
+in float emissiveEnabled;
 
-// all varying inputs
-// TODO #F3: create the varying input
-//use the 'in' keyword because we are receiving "theColor" from the vertexShader
-in vec3 theColor;
-
+//texture stuff
+uniform sampler2D texMap;
 
 // all fragment outputs
-// TODO #D: create the color output
-//creat output variable with "out" keyword of type vec4 called fragColorOut
-out vec4 fragColorOut;
-
+out vec4 fragColor;
 
 void main() {
-    //*****************************************
-    //******* Final Color Calculations ********
-    //*****************************************
-    
-    //specify the fragment color
-    //set our output variable equal to white
-    //fragColorOut = vec4(1, 1, 1, 1);
+    vec3 color = vertexColor;
+    //check for texturing
+    if (texEnabled > 0.5) {
+        vec4 texColor = texture(texMap, vTexCoord);
+        color *= texColor.rgb;//modulate lighting with texture color
+    }
 
-    //write out the varying color
-    fragColorOut = vec4(theColor, 1); //like this more for now, but we can play with this later
+    //check for emissive
+    if (emissiveEnabled > 0.5) {
+        color += vEmissiveColor;
+    }
+
+    fragColor = vec4(color, 1.0);
 }

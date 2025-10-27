@@ -2,6 +2,7 @@ CMakeFiles/MP.dir/ArcballCam.cpp.obj: \
  C:\Users\stewa\Schoolwork\ComputerGraphics\EternalAlchemistsMidterm\ArcballCam.cpp \
  C:\Users\stewa\Schoolwork\ComputerGraphics\EternalAlchemistsMidterm\ArcballCam.h \
  C:/Users/stewa/Schoolwork/ComputerGraphics/environmentFiles/include/CSCI441/Camera.hpp \
+ C:/Users/stewa/Schoolwork/ComputerGraphics/environmentFiles/include/CSCI441/constants.h \
  C:/Users/stewa/Schoolwork/ComputerGraphics/environmentFiles/include/glad/gl.h \
  C:/Users/stewa/Schoolwork/ComputerGraphics/environmentFiles/include/KHR/khrplatform.h \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.1.0/include/stdint.h \

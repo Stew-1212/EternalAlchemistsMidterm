@@ -2,6 +2,7 @@ CMakeFiles/MP.dir/main.cpp.obj: \
  C:\Users\stewa\Schoolwork\ComputerGraphics\EternalAlchemistsMidterm\main.cpp \
  C:\Users\stewa\Schoolwork\ComputerGraphics\EternalAlchemistsMidterm\MPEngine.h \
  C:/Users/stewa/Schoolwork/ComputerGraphics/environmentFiles/include/CSCI441/ModelLoader.hpp \
+ C:/Users/stewa/Schoolwork/ComputerGraphics/environmentFiles/include/CSCI441/constants.h \
  C:/Users/stewa/Schoolwork/ComputerGraphics/environmentFiles/include/CSCI441/modelMaterial.hpp \
  C:/Users/stewa/Schoolwork/ComputerGraphics/environmentFiles/include/glad/gl.h \
  C:/Users/stewa/Schoolwork/ComputerGraphics/environmentFiles/include/KHR/khrplatform.h \
@@ -337,9 +338,25 @@ CMakeFiles/MP.dir/main.cpp.obj: \
  C:/Users/stewa/Schoolwork/ComputerGraphics/environmentFiles/include/CSCI441/OpenGLEngine.hpp \
  C:/Users/stewa/Schoolwork/ComputerGraphics/environmentFiles/include/CSCI441/OpenGLUtils.hpp \
  C:/Users/stewa/Schoolwork/ComputerGraphics/environmentFiles/include/GLFW/glfw3.h \
+ C:/Users/stewa/Schoolwork/ComputerGraphics/environmentFiles/include/stb_image_write.h \
  C:/msys64/mingw64/include/c++/15.1.0/set \
  C:/msys64/mingw64/include/c++/15.1.0/bits/stl_set.h \
  C:/msys64/mingw64/include/c++/15.1.0/bits/stl_multiset.h \
+ C:/msys64/mingw64/include/c++/15.1.0/memory \
+ C:/msys64/mingw64/include/c++/15.1.0/bits/stl_tempbuf.h \
+ C:/msys64/mingw64/include/c++/15.1.0/bits/stl_raw_storage_iter.h \
+ C:/msys64/mingw64/include/c++/15.1.0/bits/align.h \
+ C:/msys64/mingw64/include/c++/15.1.0/bits/unique_ptr.h \
+ C:/msys64/mingw64/include/c++/15.1.0/bits/shared_ptr.h \
+ C:/msys64/mingw64/include/c++/15.1.0/bits/shared_ptr_base.h \
+ C:/msys64/mingw64/include/c++/15.1.0/bits/allocated_ptr.h \
+ C:/msys64/mingw64/include/c++/15.1.0/ext/concurrence.h \
+ C:/msys64/mingw64/include/c++/15.1.0/bits/shared_ptr_atomic.h \
+ C:/msys64/mingw64/include/c++/15.1.0/bits/atomic_base.h \
+ C:/msys64/mingw64/include/c++/15.1.0/bits/atomic_lockfree_defines.h \
+ C:/msys64/mingw64/include/c++/15.1.0/backward/auto_ptr.h \
+ C:/msys64/mingw64/include/c++/15.1.0/pstl/glue_memory_defs.h \
+ C:/msys64/mingw64/include/c++/15.1.0/pstl/execution_defs.h \
  C:/Users/stewa/Schoolwork/ComputerGraphics/environmentFiles/include/CSCI441/ShaderProgram.hpp \
  C:/Users/stewa/Schoolwork/ComputerGraphics/environmentFiles/include/CSCI441/ShaderUtils.hpp \
  C:/Users/stewa/Schoolwork/ComputerGraphics/environmentFiles/include/glm/gtc/type_ptr.hpp \

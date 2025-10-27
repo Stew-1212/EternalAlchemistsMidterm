@@ -31,8 +31,15 @@ class MPEngine final : public CSCI441::OpenGLEngine {
         //default mouse value to represent mouse has not begun interacting with the window yet
         const GLfloat MOUSE_UNINITIALIZED = -9999.0f;
 
+        //function to update the chao's directional heading
+        void _updateChaoHeading(float angle);
+        //function to move around the chao
+        void _updateChaoPos(float moveAmount);
+        //function to reset the body angles of the chao
+        void _resetBodyState();
+        //function to randomly change the chao's mat color
+        void _changeChaoCol();
 
-        //Event handlers
 
     private:
         /***************************************************************************
@@ -81,18 +88,50 @@ class MPEngine final : public CSCI441::OpenGLEngine {
         CSCI441::ModelLoader* _chaoTail;
         CSCI441::ModelLoader* _chaoWings;//might need to split this into two seperate...we'll see
         //function to build the chao from all the parts
-        void _buildAndDrawChao();
+        void _buildChao();
+        //function to draw the chao from all loaded in parts
+        void _drawChao(const glm::mat4& viewMtx, const glm::mat4& projMtx) const;
+        //variable for changing chao color randomly
+        glm::vec3 _chaoMatCol;
+        //variables and function for passive animation of head ball
+        glm::vec3 _ballPos;
+        float _theta;
+        float _thetaSpeed;
+        bool _spiralOut;
+        float _thetaMax;
+        glm::vec3 _ballCenter;
+        void _animateBall();
+        //variables for moving the Chao and animating the feet, arms, and head
+        glm::vec3 _chaoHeading;
+        glm::vec3 _chaoPosOffset;
+        bool _isMoving;
+        glm::vec3 _chaoPos; //need this variable for the camera
+        void _animateBody();
+        bool _origAngle;
+        float _armAngle;
+        float _armAngle2;
+        float _footAngle;
+        float _headAngle;
+
 
         //GRID STUFF
         //size of the world/ground plane
-        GLfloat WORLD_SIZE = 100.0f;
+        GLfloat WORLD_SIZE = 180.0f;
         //VAO for the ground plane
         GLuint _groundVAO;
         //number of points that make up our ground 
         GLsizei _numGroundPoints;
         //function that creates the ground VAO
         void _createGroundBuffers();
-        //MAY WANT TO ADD OTHER BUILDINGS/STRUCTURES TO FILL OUR SCENE LATER!!
+        //function that draws the ground grid
+        void _drawGroundGrid(const glm::mat4& viewMtx, const glm::mat4& projMtx) const;
+        
+        //function to utilize class objects.hpp file to create the environment
+        void _drawEnvironment(const glm::mat4& viewMtx, const glm::mat4& projMtx) const; //this will actually be a drawing function so must be const type
+        //add two vectors to store the positional and color data (randomly generated) for the environment
+        std::vector<glm::vec3> _starPositions;
+        std::vector<glm::vec3> _starColors;
+        float _starAngle;
         
 
         /**********************************************
@@ -117,6 +156,14 @@ class MPEngine final : public CSCI441::OpenGLEngine {
             GLint normMtx;
             //texture map Uniform
             GLint texMap;
+            //useTexture bool
+            GLint useTexture;
+            //useVertexColor bool
+            GLint useVertexColor;
+            //emissive color
+            GLint emissiveColor;
+            //use emissive bool
+            GLint useEmissive;
         } _MPShaderUniformLocations;
 
         //struc that will store the locations of all our shader attributes
@@ -127,6 +174,8 @@ class MPEngine final : public CSCI441::OpenGLEngine {
             GLint vNormal;
             //texture coordinate
             GLint texCoord;
+            //vertex color
+            GLint vColor;
         } _MPShaderAttributeLocations;
 
 
