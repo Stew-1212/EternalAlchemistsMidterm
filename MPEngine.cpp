@@ -401,7 +401,7 @@ void MPEngine::run(){
         _MPShaderProgram->useProgram();
         //send over the mvp and normMtx to gpu
         glUniformMatrix4fv(_MPShaderUniformLocations.mvpMtx, 1, GL_FALSE, &mvpMtx[0][0]);
-        glUniformMatrix4fv(_MPShaderUniformLocations.normMtx, 1, GL_FALSE, &normMtx[0][0]);
+        glUniformMatrix3fv(_MPShaderUniformLocations.normMtx, 1, GL_FALSE, &normMtx[0][0]);
         _chaoHeadBall->draw(_MPShaderProgram->getShaderProgramHandle());
     }
     //draw chao RArm
@@ -425,7 +425,7 @@ void MPEngine::run(){
         _MPShaderProgram->useProgram();
         //send over the mvp and normMtx to gpu
         glUniformMatrix4fv(_MPShaderUniformLocations.mvpMtx, 1, GL_FALSE, &mvpMtx[0][0]);
-        glUniformMatrix4fv(_MPShaderUniformLocations.normMtx, 1, GL_FALSE, &normMtx[0][0]);
+        glUniformMatrix3fv(_MPShaderUniformLocations.normMtx, 1, GL_FALSE, &normMtx[0][0]);
         _chaoRArm->draw(_MPShaderProgram->getShaderProgramHandle());
     }
     //draw chao LArm
@@ -449,7 +449,7 @@ void MPEngine::run(){
         _MPShaderProgram->useProgram();
         //send over the mvp and normMtx to gpu
         glUniformMatrix4fv(_MPShaderUniformLocations.mvpMtx, 1, GL_FALSE, &mvpMtx[0][0]);
-        glUniformMatrix4fv(_MPShaderUniformLocations.normMtx, 1, GL_FALSE, &normMtx[0][0]);
+        glUniformMatrix3fv(_MPShaderUniformLocations.normMtx, 1, GL_FALSE, &normMtx[0][0]);
         _chaoLArm->draw(_MPShaderProgram->getShaderProgramHandle());
     }
     //draw chao body
@@ -469,7 +469,7 @@ void MPEngine::run(){
         _MPShaderProgram->useProgram();
         //send over the mvp and normMtx to gpu
         glUniformMatrix4fv(_MPShaderUniformLocations.mvpMtx, 1, GL_FALSE, &mvpMtx[0][0]);
-        glUniformMatrix4fv(_MPShaderUniformLocations.normMtx, 1, GL_FALSE, &normMtx[0][0]);
+        glUniformMatrix3fv(_MPShaderUniformLocations.normMtx, 1, GL_FALSE, &normMtx[0][0]);
         _chaoBody->draw(_MPShaderProgram->getShaderProgramHandle());
     }
     //draw chao RFoot
@@ -491,7 +491,7 @@ void MPEngine::run(){
         _MPShaderProgram->useProgram();
         //send over the mvp and normMtx to gpu
         glUniformMatrix4fv(_MPShaderUniformLocations.mvpMtx, 1, GL_FALSE, &mvpMtx[0][0]);
-        glUniformMatrix4fv(_MPShaderUniformLocations.normMtx, 1, GL_FALSE, &normMtx[0][0]);
+        glUniformMatrix3fv(_MPShaderUniformLocations.normMtx, 1, GL_FALSE, &normMtx[0][0]);
         _chaoRFoot->draw(_MPShaderProgram->getShaderProgramHandle());
     }
     //draw chao LFoot
@@ -513,7 +513,7 @@ void MPEngine::run(){
         _MPShaderProgram->useProgram();
         //send over the mvp and normMtx to gpu
         glUniformMatrix4fv(_MPShaderUniformLocations.mvpMtx, 1, GL_FALSE, &mvpMtx[0][0]);
-        glUniformMatrix4fv(_MPShaderUniformLocations.normMtx, 1, GL_FALSE, &normMtx[0][0]);
+        glUniformMatrix3fv(_MPShaderUniformLocations.normMtx, 1, GL_FALSE, &normMtx[0][0]);
         _chaoLFoot->draw(_MPShaderProgram->getShaderProgramHandle());
     }
     //draw chao Tail
@@ -533,7 +533,7 @@ void MPEngine::run(){
         _MPShaderProgram->useProgram();
         //send over the mvp and normMtx to gpu
         glUniformMatrix4fv(_MPShaderUniformLocations.mvpMtx, 1, GL_FALSE, &mvpMtx[0][0]);
-        glUniformMatrix4fv(_MPShaderUniformLocations.normMtx, 1, GL_FALSE, &normMtx[0][0]);
+        glUniformMatrix3fv(_MPShaderUniformLocations.normMtx, 1, GL_FALSE, &normMtx[0][0]);
         _chaoTail->draw(_MPShaderProgram->getShaderProgramHandle());
     }
     //draw chao Wings
@@ -553,7 +553,7 @@ void MPEngine::run(){
         _MPShaderProgram->useProgram();
         //send over the mvp and normMtx to gpu
         glUniformMatrix4fv(_MPShaderUniformLocations.mvpMtx, 1, GL_FALSE, &mvpMtx[0][0]);
-        glUniformMatrix4fv(_MPShaderUniformLocations.mvpMtx, 1, GL_FALSE, &mvpMtx[0][0]);
+        glUniformMatrix3fv(_MPShaderUniformLocations.normMtx, 1, GL_FALSE, &normMtx[0][0]);
         _chaoWings->draw(_MPShaderProgram->getShaderProgramHandle());
     }
  }
@@ -676,7 +676,7 @@ void MPEngine::run(){
             glm::mat4 mvp = projMtx * viewMtx * model;
             glm::mat3 normMtx = glm::mat3(glm::transpose(glm::inverse(model)));
             glUniformMatrix4fv(_MPShaderUniformLocations.mvpMtx, 1, GL_FALSE, &mvp[0][0]);
-            glUniformMatrix4fv(_MPShaderUniformLocations.normMtx, 1, GL_FALSE, &normMtx[0][0]);
+            glUniformMatrix3fv(_MPShaderUniformLocations.normMtx, 1, GL_FALSE, &normMtx[0][0]);
             //draw the cube
             CSCI441::drawSolidCube(5.0f);
         }
