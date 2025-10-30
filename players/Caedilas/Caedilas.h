@@ -7,14 +7,16 @@
 #include <glm/gtc/constants.hpp>
 #include <CSCI441/MD5Model.hpp>
 
-class Caedilas {
+#include "../../Player.hpp"
+
+class Caedilas : public Player  {
 public:
     /// \desc creates a simple Caedilas that gives the appearance of flight
     /// \param shaderProgramHandle shader program handle that the Caedilas should be drawn using
     /// \param mvpMtxUniformLocation uniform location for the full precomputed MVP matrix
     /// \param normalMtxUniformLocation uniform location for the precomputed Normal matrix
     /// \param materialColorUniformLocation uniform location for the material diffuse color
-    Caedilas( GLuint shaderProgramHandle, GLint mvpMtxUniformLocation,  GLint vPos, GLint vTexCoord );
+    Caedilas( GLuint shaderProgramHandle, GLint mvpMtxUniformLocation, GLint normalMtxUniformLocation, GLint vPos, GLint vNormal, GLint vTexCoord );
 
     ~Caedilas();
 

@@ -54,6 +54,7 @@ class Player {
     void _clampPhi();
     // \desc keep player inside of world boundaries
     void _computeOrientation();
+    void _clampPosition();
 
   protected:
     // helpers
@@ -67,6 +68,7 @@ class Player {
     GLfloat mPhi;
     GLfloat mTheta;
 
+    
     virtual void mComputeAndSendMatrixUniforms(const glm::mat4& modelMtx, const glm::mat4& viewMtx, const glm::mat4& projMtx) const;
 
     /// \desc handle of the shader program to use when drawing
@@ -74,7 +76,7 @@ class Player {
     /// \desc stores the uniform locations needed
     struct ShaderProgramUniformLocations {
       /// \desc location of the precomputed ModelViewProjection matrix
-      GLint mpvMtx;
+      GLint mvpMtx;
       /// \desc location of the precomputed Normal matrix
       GLint normalMtx;
     } mShaderProgramUniformLocations;
@@ -82,12 +84,12 @@ class Player {
 
 inline void Player::moveForward(const GLfloat speed) {
   mPosition += mDirection * speed;
-  _clampLocation();
+  _clampPosition();
 }
 
 inline void Player::moveBackward(const GLfloat speed){
   mPosition -= mDirection * speed;
-  _clampLocation();
+  _clampPosition();
 }
 
 inline void Player::rotate(const GLfloat dTheta, const GLfloat dPhi) {
@@ -112,8 +114,8 @@ inline void Player::_clampPhi() {
 
 inline void Player::_computeOrientation() {
   // TODO: phi
-  mDirection.x = glm::cos(_theta);
-  mDirection.z = glm::sin(_theta);
+  mDirection.x = glm::cos(mTheta);
+  mDirection.z = glm::sin(mTheta);
 
   mDirection = glm::normalize(mDirection);
 
@@ -130,7 +132,7 @@ inline void Player::_clampPosition() {
   }
 }
 
-void Player::mComputeAndSendMatrixUniforms(const glm::mat4& modelMtx, const glm::mat4& viewMtx, const glm::mat4& projMtx) const {
+inline void Player::mComputeAndSendMatrixUniforms(const glm::mat4& modelMtx, const glm::mat4& viewMtx, const glm::mat4& projMtx) const {
     // precompute the Model-View-Projection matrix on the CPU
     glm::mat4 mvpMtx = projMtx * viewMtx * modelMtx;
     // then send it to the shader on the GPU to apply to every vertex
