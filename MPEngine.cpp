@@ -1,4 +1,5 @@
 #include "MPEngine.h"
+#include "players/Caedilas/Caedilas.h"
 #include <CSCI441/objects.hpp> //might want this later to generate more objects in the scene
 
 //GET YOUR ARCBALL CAMERA MADE FIRST!!!
