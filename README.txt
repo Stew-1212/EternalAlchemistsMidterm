@@ -7,6 +7,6 @@ Player.hpp
 
 Hopefully I got functions right... feel free to change it if there are any problems.
 
-Has standard movement functions moveForward(speed), moveBackward(speed), and rotate(theta, phi). draw() and animate(dTime) need to be overridden. The constructor should also be overridden with model-loading information.
+Has standard movement functions moveForward(speed), moveBackward(speed), and rotate(theta, phi). draw(viewMtx, projMtx) and animate(dTime) need to be overridden. Calculate model matrix based on held location (mPosition, mPhi, mTheta). You can put model-loading information in your constructor or a separate function. Use setProgramUniformLocations (from the engine) then mComputeAndSendMatrixUniforms(modelMtx, viewMtx, projMtx) (from your player drawing) to send mvp and normal.
 
 _computeOrientation() currently doesn't have phi (I broke mine in A3 and forgot to fix it since it was unused).
