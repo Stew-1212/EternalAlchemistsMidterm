@@ -1,0 +1,7 @@
+CMakeLists.txt
+build/
+MP
+CMakeCache.txt
+Makefile
+CMakeFiles/
+cmake_install.cmake
